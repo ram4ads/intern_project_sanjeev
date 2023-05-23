@@ -1,0 +1,163 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.active{
+  background-color: blue;
+  color: whitesmoke;
+  width: 110px;
+  height:50px;
+  border-radius: 15px;
+  margin: 10px;
+}
+.tab{
+  width: 110px;
+  height:50px;
+  border-radius: 15px;
+  margin: 10px;
+
+}
+.tabs{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: coral;
+  border-radius: 10px;
+  background-size: cover;
+  padding: auto;
+}
+.container{
+  background-color: coral;
+  background-size: cover;
+  width:100vw;
+  height: 100vh;
+  border-radius: 50px;
+  margin: 20px;
+}
+.currentinput{
+  width: 290px;
+  height: 20px;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+
+}
+.mini-container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  margin-left: 100px;
+  
+}
+.btn{
+  width: 150px;
+  height: 39px;
+  border-radius: 7px;
+}
+.tab_container{
+  margin-left: 15px;
+ 
+}
+.tab_container1{
+  margin-left: 15px;
+  display: flex;
+  
+}
+.captcha-group{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.third_tab{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+.captcha{
+  margin-top: 20px;
+  margin-right: 5px;
+}
+.captcha_generate{
+  background-color: rgb(160, 162, 19);
+  color: black;
+  margin: 10px;
+  margin-bottom: 20px;
+}
+.submit{
+  background-color: green;
+  color: white;
+  margin-left: 80px;
+  margin-top: 20px;
+}
+.image{
+  margin-top: 100px;
+  border-radius: 0px;
+  width: 800px;
+  height: 600px;
+ 
+  margin-left: 100px 
+}
+.label{
+  font-weight: bold;
+  font-size: large;
+}
+.status{
+  font-weight: bold;
+  font-size: large;
+  margin-left: 50px;
+}
+.voice_assistance{
+  margin: 10px;
+  background-color: green;
+  color: white;
+}
+.capturephoto{
+  margin-left: 80px;
+  background-color: green;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.selectedfile{
+  width: 300px !important;
+  height: 250px !important;
+}
+.sigCanvas{
+  background-color: pink;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.clear{
+  background-color: brown;
+  color: white;
+}
+.save{
+  background-color: chocolate;
+  color:whitesmoke;
+}
+.webcam{
+  margin-top: 100px;
+  margin-left: 30px;
+}
+.webcam_image{
+  width: 300px;
+  height: 200px;
+  margin: 10px;
+  margin-left: 50px;
+  border-radius: 10px;
+}
+.thirdtab{
+  margin: 20px;
+  margin-top: 100px;
+}
