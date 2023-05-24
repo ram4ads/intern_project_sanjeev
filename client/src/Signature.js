@@ -1,12 +1,7 @@
-
-
 import React, { useState, useRef, useEffect } from 'react';
 import SignatureCanvas from 'react-signature-canvas';
 import Webcam from "react-webcam";
-
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
-
-
 
 const SignatureInput = () => {
   const [signature, setSignature] = useState("");
@@ -120,14 +115,13 @@ const [control,setcontrol]=useState(false)
   setSelectedFile("")
 }
 
-
   const startListening = () => {
     // setCurrentInput("name");
     speak("Please tell me your firstname");
     SpeechRecognition.startListening({ continuous: true });
   };
  
-  
+ 
     useEffect(() => {
       setCaptcha(generateCaptcha())
     }, []);
@@ -180,10 +174,6 @@ const [control,setcontrol]=useState(false)
   const minDate = `${yyyy}-${mm}-${dd}`;
 
 
-  
-
- 
-
   const handleTabClick = (tabNumber) => {
     if (tabNumber === 2 && !isTab1Valid()) {
       alert('Please fill in all the details in Tab 1 before proceeding to Tab 2.');
@@ -209,9 +199,6 @@ const [control,setcontrol]=useState(false)
   };
 
   // Rest of the code...
-console.log(selectedFile,"file type")
-console.log(signature,"signature")
-console.log(imgSrc,"image")
 
   return (
     <>
@@ -322,10 +309,7 @@ console.log(imgSrc,"image")
                   <img src={selectedFile} alt="Selected" className='selectedfile'/>
                 </div>
               )}
-    </div>
-             
-              
-             
+    </div> 
             </div>
             
           )}
@@ -334,11 +318,8 @@ console.log(imgSrc,"image")
             <div className='tab_container1'>
                <div>
               <img src="passport-4841579_960_720.jpg" alt="passport image" className='image'/>
-
-                </div>
-              
+             </div>
               <div className='mini-container'>
-              
                 <SignatureCanvas
                   penColor='black'
                   
@@ -424,8 +405,6 @@ console.log(imgSrc,"image")
                 {/* <button onClick={()=>setcontrol(true)}>control</button> */}
               <p className='status'>{successfull}</p>
               </div>
-              
-      
             </div>
           )}
         </div>
