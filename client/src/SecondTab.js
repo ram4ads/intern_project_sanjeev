@@ -3,12 +3,10 @@ import SignatureCanvas from 'react-signature-canvas';
 import Webcam from "react-webcam";
 import { TabContext } from './App';
 
-
 const Tab2 = () => {
-
+    
     const {imagesrc,signature,uploadSignature,uploadImage} =useContext(TabContext)
     
-   
     const webcamRef = useRef("");
     const sigCanvas = useRef(null);
     const clearSignature = () => {
