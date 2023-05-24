@@ -1,36 +1,18 @@
-
 import React, { useState,useContext } from 'react';
-
-
 import { TabContext } from './App';
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
 
-
-
-
-
-
-
-
-
 const Tab1 = () => {
-    
-   
   const [selectedFile, setSelectedFile] = useState(null);
   const [dateOfBirth, setDateOfBirth] = useState('');
-  const maxDate = new Date(1925, 0, 1);
- 
- 
+  const maxDate = new Date(1925, 0, 1)
   const {name,email,lastName,setName,setEmail,setLastName,gender,setgender,imagesrc,signature,setsuccessfull,setformsubmistion,uploadImage,uploadSignature} =useContext(TabContext)
-
-
 
   const commands = [
     {
       command: "first*",
       callback: (name) => {
         setName(name);
-        
         speak("Please tell me your lastName address");
       },
     },
@@ -38,7 +20,6 @@ const Tab1 = () => {
       command: "last*",
       callback: (lastName) => {
         setLastName(lastName);
-        
         speak("Please tell me your email address");
       },
     },
@@ -46,7 +27,6 @@ const Tab1 = () => {
       command: "mail*",
       callback: (email) => {
         setEmail(email);
-       
         speak("Please tell me your Gender");
       },
     },
@@ -54,7 +34,6 @@ const Tab1 = () => {
       command: "gender*",
       callback: (gender) => {
         setgender(gender);
-        
         speak("Ready to submit. Say 'Submit' to submit the form");
       },
     },
@@ -63,9 +42,7 @@ const Tab1 = () => {
       callback: () => submitForm(),
     },
   ];
-
   const { transcript } = useSpeechRecognition({ commands });
-
   const handleGenderChange = (e) => {
     setgender(e.target.value);
   };
@@ -75,8 +52,6 @@ const Tab1 = () => {
     speech.text = text;
     speechSynthesis.speak(speech);
   };
-  
- 
   
 const submitForm = () => {
   console.log('data is fetching')
@@ -93,11 +68,7 @@ const submitForm = () => {
     signature:signature
   })
 }).then(data=>console.log(data))
-
-
 }
-
-
 
 const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
@@ -115,17 +86,7 @@ const handleFileChange = (event) => {
    const mm = String(today.getMonth() + 1).padStart(2, '0');
    const dd = String(today.getDate()).padStart(2, '0');
    const minDate = `${yyyy}-${mm}-${dd}`;
-   
-
-
-        
-  
     
-    
-
-
-    
-  
     return (
       <div>
          <div>
