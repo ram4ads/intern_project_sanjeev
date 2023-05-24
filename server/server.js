@@ -74,6 +74,6 @@ app.post('/postdata', async (req, res) => {
 });
 
 // Start the server
-app.listen(7006, () => {
+app.listen(7000, () => {
   console.log('Server started on port 7006');
 });
