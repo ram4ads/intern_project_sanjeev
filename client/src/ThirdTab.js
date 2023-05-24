@@ -1,11 +1,8 @@
 import React,{useContext,useState} from "react";
-
 import { TabContext } from "./App";
+
 const Tab3 = () => {
-  const {name,email,lastName,setName,setEmail,setLastName,gender,setgender,imagesrc,signature,setsuccessfull,setformsubmistion,uploadImage,uploadSignature,successfull} =useContext(TabContext)
-
-  
-
+    const {name,email,lastName,setName,setEmail,setLastName,gender,setgender,imagesrc,signature,setsuccessfull,setformsubmistion,uploadImage,uploadSignature,successfull} =useContext(TabContext)
     const [captcha, setCaptcha] = useState('');
     const [captchaValue, setCaptchaValue] = useState('');
     
@@ -28,7 +25,6 @@ const Tab3 = () => {
 
 const submitForms = () => {
   
- 
   fetch("http://localhost:7005/postdata",{ method: 'POST',
   headers: {
     'Content-Type': 'application/json'
@@ -52,41 +48,30 @@ const submitForms = () => {
   setsuccessfull("")
   uploadSignature("")
   console.log(data,"success")
-  
 })
-
-
-
-
 }
 
-
-    return (
+ return (
       <div>
        <div>
-              <div className="form-group">
-                <label>Enter Captcha:</label>
-                <input
-                  type="text"
-                  value={captchaValue}
-                  onChange={(e) => setCaptchaValuefun(e.target.value)}
-                  required
-
-                />
-              </div>
-
-              <div className="captcha-group">
-                <img src={captcha} alt={captcha} />
-                <button type="button" onClick={() => setCaptcha(generateCaptcha())}>
-                  Generate New Captcha
-                </button>
-                <button onClick={()=>submitForms()}>Submit</button>
-                
-              <p>{successfull}</p>
-              </div>
-              
-      
-            </div>
+          <div className="form-group">
+          <label>Enter Captcha:</label>
+          <input
+            type="text"
+            value={captchaValue}
+            onChange={(e) => setCaptchaValuefun(e.target.value)}
+            required
+            />
+      </div>
+        <div className="captcha-group">
+        <img src={captcha} alt={captcha} />
+        <button type="button" onClick={() => setCaptcha(generateCaptcha())}>
+         Generate New Captcha
+        </button>
+        <button onClick={()=>submitForms()}>Submit</button>
+         p>{successfull}</p>
+        </div>
+    </div>
       </div>
     );
   };
