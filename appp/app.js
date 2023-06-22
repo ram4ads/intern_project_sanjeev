@@ -2,7 +2,7 @@
 
 const query = `
   query GetUser {
-    user(id: "6") {
+    user(id: "4") {
       id
       name
       friends {
