@@ -3,7 +3,6 @@ const express = require('express');
 const {graphqlHTTP}= require('express-graphql')
 const { buildSchema }= require('graphql')
 
-
 const users = [
   {
     id: '1',
@@ -50,7 +49,8 @@ const schema = buildSchema(`
   }
 `);
 
-  //<======================================>//
+//<=======================This code also works =========================>//
+
   // Helper function to fetch friends of friends
 // Helper function to fetch friends of friends
 // const fetchFriendsOfFriends = (userId, visited = []) => { //1 visited=[1,]
@@ -75,9 +75,7 @@ const schema = buildSchema(`
 
 //         return []
 //       }
-     
-
-    
+        
 //       return [
 //         {
 //           id: friend.id, //2 ,
@@ -107,13 +105,14 @@ const schema = buildSchema(`
    
 //   };
 
+//<====================End of the Code=====================================>
+
 const fetchFriendsOfFriends=(userId,visited=[],output=[])=>{
   if(visited.includes(userId)){
     return;
   }
   visited.push(userId)
   
-
   const newuser=users.find(user=>user.id===userId)
   output.push({"name":newuser.name,"id":newuser.id})
   newuser.friends.map(friendId=>{
@@ -125,14 +124,6 @@ const fetchFriendsOfFriends=(userId,visited=[],output=[])=>{
     
 }
 
-
-
-  
-  // Resolver functions
-  
-  
-
-  
   // Resolver functions
   const root = {
     user: ({ id }) => {
@@ -151,7 +142,6 @@ const fetchFriendsOfFriends=(userId,visited=[],output=[])=>{
     },
   };
   
-
 // Create an Express app
 const app = express();
 
@@ -164,8 +154,6 @@ app.use(
     graphiql: true, // Enable GraphiQL for testing
   })
 );
-
-
 
 const port = 4500;
 app.listen(port, () => {
